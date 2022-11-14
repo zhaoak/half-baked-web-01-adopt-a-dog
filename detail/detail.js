@@ -10,7 +10,9 @@ window.addEventListener('load', async() => {
     const id = params.get('id');
 
     // use the id to fetch the dog
-    const response = getDog(id);
-    console.log(response);
+    const response = await getDog(id);
+
     // render and append this dog's details to the container
+    const dogDetailEl = renderDogDetail(response.data[0]);
+    dogDetailContainer.append(dogDetailEl);
 });
