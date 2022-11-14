@@ -13,10 +13,12 @@ export async function getDogs() {
 }
 
 export async function getDog(id) {
-    // from the dogs table, select a single dog who has the matching id
+    // grab all dogs
     let query = client.from('dogs').select('*').limit(100);
+    // match dog to specific id,
     query = query.eq('id', id);
     const response = await query;
-    // and return the response
-    return response;
+    // and return just the data from the response
+    return response.data[0];
+    // I know I should be selecting the dog by id in the query but I want my code to be at least a little different from the demo code okay
 }

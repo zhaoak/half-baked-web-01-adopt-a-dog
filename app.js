@@ -11,8 +11,13 @@ window.addEventListener('load', async() => {
     const response = await getDogs();
     dogs = response.data;
     // render and append all dog cards to the container
+    displayDogs();
+});
+
+function displayDogs() {
+    dogListContainer.textContent = '';
     for (let dog of dogs) {
         const dogEl = renderDogCard(dog);
         dogListContainer.append(dogEl);
     }
-});
+}
