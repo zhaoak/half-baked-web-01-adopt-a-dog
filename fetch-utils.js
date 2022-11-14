@@ -14,5 +14,10 @@ export async function getDogs() {
 
 export async function getDog(id) {
     // from the dogs table, select a single dog who has the matching id
+    let query = client.from('dogs').select('*').limit(100);
+    query = query.eq('id', id);
+    const response = await query;
     // and return the response
+    console.log(response);
+    return response;
 }
