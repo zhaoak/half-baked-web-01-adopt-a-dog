@@ -18,6 +18,5 @@ export async function getDog(id) {
     query = query.eq('id', id);
     const response = await query;
     // and return the response
-    console.log(response);
     return response;
 }

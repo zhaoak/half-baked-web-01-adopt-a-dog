@@ -8,7 +8,7 @@ export function renderDogCard(dog) {
 
     p.textContent = dog.name;
     img.src = `./assets/${dog.breed}.jpeg`;
-    a.href = './detail/index.html'; // link to the dog's detail page here
+    a.href = `./detail/index.html?id=${dog.id}`; // link to the dog's detail page here
 
     div.append(p, img);
 
